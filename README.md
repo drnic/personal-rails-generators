@@ -5,6 +5,8 @@ You are most like going to want to fork this repository, modify or add generator
 
 ## Installation
 
+    cd ~
+    mkdir -p .rails
     cd ~/.rails
     git clone git://github.com/drnic/personal-rails-generators.git generators
 
