@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title><%= app_name.capitalize %></title>
+  </head>
+  <body>
+    <div id="container">
+      <p style="color: red; font-size: 16px; line-height: 20px;">
+        <%= app_name.capitalize %> is down for <%%= reason ? reason : "maintenance" %>
+        as of <%%= Time.now.strftime("%H:%M %Z") %>.
+      </p>
+      <p style="color: #666;">
+        It'll be back <%%= deadline ? deadline : "shortly" %>. Promise.
+      </p>
+    </div>
+  </body>
+</html>
