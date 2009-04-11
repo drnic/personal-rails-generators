@@ -25,7 +25,7 @@ class DeployGenerator < Rails::Generator::Base
 
       # Create stubs
       m.template "Capify.erb",  "Capify", :force => true
-      m.template "app/views/layouts/maintenance.html.erb",  "app/views/layouts/maintenance.html.erb", :force => true
+      m.template "app/views/layouts/maintenance.html.erb",  "app/views/layouts/maintenance.html.erb", :collision => :force
     end
   end
 

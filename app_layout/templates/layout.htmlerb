@@ -2,9 +2,9 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title><%%= yield(:title) || "<%= application.capitalize %>" %></title>
+    <title><%%= yield(:title) || "<%= application.humanize.titleize %>" %></title>
     <%%= stylesheet_link_tag '<%= file_name %>', 'form' %>
-    <%%= javascript_include_tag :defaults %>
+    <%%= javascript_include_tag 'jquery', 'jquery.template', 'jquery.form' %>
     <%%= yield(:head) %>
   </head>
   <body>

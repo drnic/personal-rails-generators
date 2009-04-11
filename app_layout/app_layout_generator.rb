@@ -22,8 +22,11 @@ class AppLayoutGenerator < Rails::Generator::Base
         m.file 'images/openid.gif',           "public/images/openid.gif"
         m.file 'images/rails.png',            "public/images/rails.gif"
         m.file 'images/rss.gif',              "public/images/rss.gif"
-        m.file 'favicon.ico',                 "public/favicon.ico"
       end
+      m.file 'favicon.ico',                   "public/favicon.ico", :collision => :force
+      m.file 'javascripts/jquery.js',         "public/javascripts/jquery.js"
+      m.file 'javascripts/jquery.template.js',"public/javascripts/jquery.template.js"
+      m.file 'javascripts/jquery.form.js',    "public/javascripts/jquery.form.js"
     end
   end
 
