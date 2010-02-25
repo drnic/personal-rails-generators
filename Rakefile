@@ -15,8 +15,10 @@ task :sample_app_layout do
   FileUtils.mkdir_p(path)
   FileUtils.chdir path do
     sh "rails . --force"
+    sh "rm public/index.html"
+    sh "script/generate home_route . --force"
     sh "script/generate app_layout"
   end
   puts "Now add ~/Sites/sample_app_layout is added to passenger."
-  sh "open http://sample_app_layout.local"
+  sh "open http://sample-app-layout.local/"
 end
