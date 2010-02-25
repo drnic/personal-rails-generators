@@ -9,3 +9,11 @@ task :assets do
   end
 end
 
+desc "Generate sample app_layout page"
+task :sample_app_layout do
+  sample_file = File.join(File.dirname(__FILE__), "app_layout", "sample.html")
+  File.open(sample_file, "w") do |f|
+    f << "hi"
+  end
+  `open #{sample_file}`
+end
