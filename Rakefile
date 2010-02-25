@@ -11,9 +11,12 @@ end
 
 desc "Generate sample app_layout page"
 task :sample_app_layout do
-  sample_file = File.join(File.dirname(__FILE__), "app_layout", "sample.html")
-  File.open(sample_file, "w") do |f|
-    f << "hi"
+  path = File.join(ENV['HOME'], "Sites", "sample_app_layout")
+  FileUtils.mkdir_p(path)
+  FileUtils.chdir path do
+    sh "rails . --force"
+    sh "script/generate app_layout"
   end
-  `open #{sample_file}`
+  puts "Now add ~/Sites/sample_app_layout is added to passenger."
+  sh "open http://sample_app_layout.local"
 end
