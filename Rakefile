@@ -14,10 +14,13 @@ task :sample_app_layout do
   path = File.join(ENV['HOME'], "Sites", "sample_app_layout")
   FileUtils.mkdir_p(path)
   FileUtils.chdir path do
+    sh "rm -rf *"
     sh "rails . --force"
     sh "rm public/index.html"
+    sh "haml --rails ."
     sh "script/generate home_route . --force"
     sh "script/generate app_layout"
+    sh "touch tmp/restart.txt"
   end
   puts "Now add ~/Sites/sample_app_layout is added to passenger."
   sh "open http://sample-app-layout.local/"

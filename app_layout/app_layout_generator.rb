@@ -12,14 +12,18 @@ class AppLayoutGenerator < Rails::Generator::Base
 
   def manifest
     record do |m|
-      m.template 'layout.htmlerb',  "app/views/layouts/#{file_name}.html.erb"
+      m.file 'application.html.haml',  "app/views/layouts/application.html.haml"
+      m.file '_header.html.haml',  "app/views/layouts/_header.html.haml"
+      m.file '_navigation.html.haml',  "app/views/layouts/_navigation.html.haml"
+      m.file '_footer.html.haml',  "app/views/layouts/_footer.html.haml"
       m.file 'application_helper.rb', "app/helpers/application_helper.rb", :collision => :force
       if options[:use_css]
-        m.file 'stylesheets/stylesheet.css',  "public/stylesheets/#{file_name}.css"
-        m.file 'stylesheets/form.css',        "public/stylesheets/form.css"
-        m.file 'images/indicator_roller.gif', "public/images/indicator_roller.gif"
-        m.file 'images/openid.gif',           "public/images/openid.gif"
-        m.file 'images/rss.gif',              "public/images/rss.gif"
+        m.file 'stylesheets/style.css',         "public/stylesheets/style.css"
+        m.file 'stylesheets/reset.css',         "public/stylesheets/reset.css"
+        m.file 'stylesheets/enrichment.css',    "public/stylesheets/enrichment.css"
+        m.file 'images/logo.png',               "public/images/logo.png"
+        m.file 'images/footer-logo.png',               "public/images/footer-logo.png"
+        m.file 'images/footer.png',             "public/images/footer.png"
       end
       m.file 'favicon.ico',                         "public/favicon.ico", :collision => :force
       m.file 'javascripts/jquery.js',               "public/javascripts/jquery.js"

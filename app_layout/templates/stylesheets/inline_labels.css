@@ -1,0 +1,7 @@
+p.error{display:block;padding:10px;border-top:1px solid #f00;border-bottom:1px solid #f00;background:#FF9F9F;}
+p.notice{display:block;padding:10px;border-top:1px solid #249F1D;border-bottom:1px solid #249F1D;background:#AADFA7;}
+
+.inline-errors{display:none;}
+li.error input{border-color:red !important;}
+input:focus{outline:none;} /* Removes the Mac OS X Glowing Blue Outline for Custom Styled Input Fields */
+li.inner-label input, li.inner-label textarea{color: #999;}
