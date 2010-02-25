@@ -18,15 +18,11 @@ class AppLayoutGenerator < Rails::Generator::Base
         m.file 'stylesheets/stylesheet.css',  "public/stylesheets/#{file_name}.css"
         m.file 'stylesheets/form.css',        "public/stylesheets/form.css"
         m.file 'images/indicator_roller.gif', "public/images/indicator_roller.gif"
-        m.file 'images/lock.gif',             "public/images/lock.gif"
         m.file 'images/openid.gif',           "public/images/openid.gif"
-        m.file 'images/rails.png',            "public/images/rails.gif"
         m.file 'images/rss.gif',              "public/images/rss.gif"
       end
       m.file 'favicon.ico',                         "public/favicon.ico", :collision => :force
       m.file 'javascripts/jquery.js',               "public/javascripts/jquery.js"
-      m.file 'javascripts/jquery.template.js',      "public/javascripts/jquery.template.js"
-      m.file 'javascripts/jquery.form.js',          "public/javascripts/jquery.form.js"
       m.file 'javascripts/jquery.relatize_date.js', "public/javascripts/jquery.relatize_date.js"
     end
   end
